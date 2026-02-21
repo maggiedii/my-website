@@ -1,7 +1,7 @@
 {
   "_comment": "Edit name/tagline/bio plus each array: workExperience, education, volunteering, projects, socials. Restart backend after updates.",
-  "name": "Your Name",
-  "tagline": "Software Engineer | Designer | Creator",
+  "name": "Maggie Di",
+  "tagline": "Student | Designer | Creator",
   "bio": "Hello! I'm a passionate software engineer with a love for building beautiful, functional web applications. I specialize in full-stack development with React, TypeScript, and Node.js.\n\nI believe in writing clean, maintainable code and creating delightful user experiences. When I'm not coding, you can find me exploring new technologies, contributing to open source, or sharing knowledge with the community.\n\nI'm always excited to collaborate on interesting projects and connect with fellow developers!",
   "workExperience": [
     {
@@ -53,25 +53,48 @@
     {
       "title": "Personal Portfolio Website",
       "description": "A modern, responsive portfolio website built with React, TypeScript, and Express. Features a beautiful pastel pink design and smooth animations.",
-      "technologies": ["React", "TypeScript", "Express", "Tailwind CSS", "Vite"],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Express",
+        "Tailwind CSS",
+        "Vite"
+      ],
       "link": "https://github.com/yourusername/portfolio"
     },
     {
       "title": "Task Management App",
       "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      "technologies": ["React", "Node.js", "MongoDB", "Socket.io", "Redux"],
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Socket.io",
+        "Redux"
+      ],
       "link": "https://github.com/yourusername/task-app"
     },
     {
       "title": "Weather Dashboard",
       "description": "A weather forecast application that provides detailed weather information with beautiful visualizations and location-based forecasts.",
-      "technologies": ["React", "TypeScript", "Weather API", "Chart.js"],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Weather API",
+        "Chart.js"
+      ],
       "link": "https://github.com/yourusername/weather-dashboard"
     },
     {
       "title": "E-commerce Platform",
       "description": "A full-featured e-commerce platform with product management, shopping cart, payment integration, and order tracking.",
-      "technologies": ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Prisma"],
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Stripe",
+        "PostgreSQL",
+        "Prisma"
+      ],
       "link": "https://github.com/yourusername/ecommerce"
     }
   ],
