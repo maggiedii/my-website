@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { GraduationCap } from 'lucide-react';
 import type { Education as EducationType } from 'shared';
 
@@ -8,7 +8,7 @@ interface EducationProps {
 
 export function Education({ education }: EducationProps) {
   return (
-    <section id="education" className="py-20 px-4">
+    <section id="education" className="scroll-mt-24 py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold text-pastel-pink-dark mb-8 text-center">Education</h2>
         <div className="space-y-6">

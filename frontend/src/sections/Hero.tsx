@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Youtube, Instagram, Video } from 'lucide-react';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 interface HeroProps {
   name: string;
@@ -7,6 +7,13 @@ interface HeroProps {
 }
 
 export function Hero({ name, tagline }: HeroProps) {
+  const initials = name
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? '')
+    .join('');
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -14,9 +21,12 @@ export function Hero({ name, tagline }: HeroProps) {
   return (
     <section
       id="hero"
-      className="min-h-[90vh] flex items-center justify-center px-4 animate-fade-in"
+      className="scroll-mt-24 min-h-[90vh] flex items-center justify-center px-4 animate-fade-in"
     >
       <div className="max-w-4xl mx-auto text-center space-y-8">
+        <Avatar className="mx-auto h-20 w-20 border-2 border-pastel-pink shadow-pastel-md animate-slide-up">
+          <AvatarFallback className="text-xl font-semibold">{initials || 'YN'}</AvatarFallback>
+        </Avatar>
         <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-pastel-pink-dark via-pastel-lavender to-pastel-pink-dark bg-clip-text text-transparent animate-slide-up">
           {name}
         </h1>

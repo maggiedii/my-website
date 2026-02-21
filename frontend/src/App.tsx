@@ -11,6 +11,15 @@ import { Projects } from './sections/Projects';
 import { Footer } from './sections/Footer';
 import { AlertCircle } from 'lucide-react';
 
+const navItems = [
+  { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Education', href: '#education' },
+  { label: 'Volunteering', href: '#volunteering' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
+];
+
 function App() {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -59,6 +68,23 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-pastel-lavender-light/20 to-pastel-mint/20">
+      <header className="sticky top-0 z-50 border-b border-pastel-pink/30 bg-white/85 backdrop-blur">
+        <nav
+          aria-label="Primary"
+          className="mx-auto flex w-full max-w-6xl items-center justify-center gap-2 overflow-x-auto px-3 py-3"
+        >
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-pastel-pink-light hover:text-pastel-pink-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </header>
+
       {usingFallback && (
         <div className="bg-pastel-peach/30 border-b border-pastel-peach px-4 py-2 text-center text-sm">
           <AlertCircle className="inline w-4 h-4 mr-2" />

@@ -6,7 +6,7 @@ interface BioProps {
 
 export function Bio({ bio }: BioProps) {
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="scroll-mt-24 py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <Card className="animate-slide-up">
           <CardHeader>

@@ -7,7 +7,7 @@ interface ExperienceProps {
 
 export function Experience({ workExperience }: ExperienceProps) {
   return (
-    <section id="experience" className="py-20 px-4 bg-pastel-lavender-light/30">
+    <section id="experience" className="scroll-mt-24 py-20 px-4 bg-pastel-lavender-light/30">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold text-pastel-pink-dark mb-8 text-center">
           Work Experience

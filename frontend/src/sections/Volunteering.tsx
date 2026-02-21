@@ -10,7 +10,7 @@ export function Volunteering({ volunteering }: VolunteeringProps) {
   if (volunteering.length === 0) return null;
 
   return (
-    <section id="volunteering" className="py-20 px-4 bg-pastel-mint/20">
+    <section id="volunteering" className="scroll-mt-24 py-20 px-4 bg-pastel-mint/20">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold text-pastel-pink-dark mb-8 text-center">Volunteering</h2>
         <div className="space-y-6">
