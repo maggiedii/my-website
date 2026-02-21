@@ -1,7 +1,7 @@
 {
   "_comment": "Edit name/tagline/bio plus each array: workExperience, education, volunteering, projects, socials. Restart backend after updates.",
   "name": "Maggie Di",
-  "tagline": "Student | Designer | Creator",
+  "tagline": "Student | Content Creator",
   "bio": "Hello, welcome to my little corner of the internet! I'm a student at the University of British Columbia, studying Environment & Sustainability. I'm also a student border services officer at the Canada Border Services Agency (CBSA). I'm a passionate about sustainability and the environment, and I'm always looking for new ways to learn and grow.",
   "workExperience": [
     {
@@ -17,28 +17,28 @@
       "description": "Built scalable web applications from scratch using the MERN stack. Collaborated with designers to create intuitive user interfaces and implemented RESTful APIs."
     },
     {
-      "company": "Digital Agency",
-      "role": "Frontend Developer",
-      "duration": "2018 - 2020",
+      "company": "St. Andrew's United Church",
+      "role": "Summer Events Coordinator",
+      "duration": " May 2023 - August 2023",
       "description": "Developed responsive websites and web applications for various clients. Worked with modern frameworks and ensured cross-browser compatibility."
     }
   ],
   "education": [
     {
       "institution": "University of British Columbia",
-      "degree": "Bachelor of Arts inEnvironment & Sustainability",
+      "degree": "Bachelor of Arts in Environment & Sustainability",
       "duration": "2023 - 2026"
     },
     {
       "institution": "Simon Fraser University",
-      "degree": "Bachelor of Science in Geographical Information Systems",
+      "degree": "Bachelor of Sciences in Geographical Information Systems",
       "duration": "2020 - 2023"
     }
   ],
   "volunteering": [
     {
-      "organization": "Code for Good",
-      "role": "Volunteer Developer",
+      "organization": "A Loving Spoonful",
+      "role": "Student Volunteer",
       "duration": "2021 - Present",
       "description": "Building web applications for non-profit organizations to help them better serve their communities."
     },
@@ -106,7 +106,7 @@
     },
     {
       "platform": "YouTube",
-      "url": "https://youtube.com/@yourchannel",
+      "url": "https://youtube.com/@maggiesdiaries",
       "icon": "youtube"
     },
     {

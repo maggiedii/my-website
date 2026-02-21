@@ -34,7 +34,7 @@ export function Hero({ name, tagline }: HeroProps) {
           {tagline}
         </p>
         <div className="flex gap-4 justify-center flex-wrap animate-slide-up">
-          <Button size="lg" onClick={() => scrollToSection('projects')}>
+          <Button size="lg" className="text-white" onClick={() => scrollToSection('projects')}>
             View Projects
           </Button>
           <Button size="lg" variant="outline" onClick={() => scrollToSection('contact')}>
