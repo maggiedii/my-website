@@ -1,128 +1,104 @@
-# Personal Website
+# Personal Website Monorepo
 
-A production-quality personal website built with React, TypeScript, and Express in a modern monorepo setup. Features a beautiful pastel pink aesthetic with responsive design and accessible components.
+Production-ready personal website monorepo with a React/Vite frontend, Express backend, shared TypeScript types, and a pastel pink design system.
 
-## ✨ Features
+## Stack
 
-- **Modern Tech Stack:** React 18, Vite, TypeScript, Tailwind CSS, shadcn/ui
-- **Monorepo Architecture:** pnpm workspaces with shared types
-- **RESTful API:** Express backend serving profile data
-- **Pastel Pink Theme:** Beautiful, accessible design with soft colors
-- **Fully Responsive:** Mobile-first design that works on all devices
-- **Type-Safe:** End-to-end TypeScript for reliability
-- **Quality Gates:** ESLint, Prettier, tests, and CI/CD
+- React 19 + Vite + TypeScript
+- Tailwind CSS + shadcn-style Radix UI components
+- Express + TypeScript + tsx
+- pnpm workspaces
+- Vitest + Testing Library
+- GitHub Actions CI
 
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Node.js 20+
-- pnpm (via corepack)
-
-### Installation
+## Quick Start
 
 ```bash
-# Enable pnpm
 corepack enable
-
-# Install dependencies
-pnpm install
-```
-
-### Development
-
-```bash
-# Run both frontend and backend
+pnpm install --frozen-lockfile
 pnpm dev
-
-# Frontend will be at http://localhost:5173
-# Backend will be at http://localhost:3000
 ```
 
-### Build for Production
+Apps:
+
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:3000`
+
+## Scripts
+
+From repo root:
 
 ```bash
-# Build all packages
+pnpm dev        # frontend + backend
+pnpm lint
+pnpm typecheck
+pnpm test
 pnpm build
 ```
 
-### Quality Checks
+Run one workspace:
 
 ```bash
-pnpm lint        # Run ESLint
-pnpm format      # Run Prettier
-pnpm typecheck   # TypeScript checks
-pnpm test        # Run tests
+pnpm --filter frontend dev
+pnpm --filter backend dev
 ```
 
-## 📁 Project Structure
+## Environment Variables
 
-```
-/
-├── frontend/          # React + Vite app
-├── backend/           # Express API server
-├── shared/            # Shared TypeScript types
-├── docs/              # Documentation
-└── package.json       # Root workspace config
+`frontend/.env`
+
+```bash
+VITE_API_URL=http://localhost:3000
 ```
 
-## 🎨 Customization
+`backend/.env`
 
-### Edit Content
-
-Update your personal information in `backend/src/data/profile.json`:
-
-```json
-{
-  "name": "Your Name",
-  "tagline": "Your Tagline",
-  "bio": "Your bio...",
-  "workExperience": [...],
-  "education": [...],
-  "projects": [...],
-  "socials": [...]
-}
+```bash
+PORT=3000
+NODE_ENV=development
+FRONTEND_URL=http://localhost:5173
 ```
 
-Restart the backend server to see changes.
+## API
 
-### Theme Colors
+- `GET /api/health` -> `{ "ok": true }`
+- `GET /api/profile` -> profile payload for all sections
 
-Customize colors in `frontend/tailwind.config.js` and `frontend/src/styles/globals.css`.
+See full API docs in `docs/API.md`.
 
-## 📖 Documentation
+## Edit Website Content
 
-- [GitHub Workflow Guide](docs/GITHUB_GUIDE.md) - Git commands and conventions
-- [API Documentation](docs/API.md) - Backend API endpoints
-- [Project Context](PROJECT_CONTEXT.md) - Living documentation
+Update `backend/src/data/profile.json`.
 
-## 🛠️ Tech Stack
+This single file powers all site sections:
 
-**Frontend:**
-- React 18
-- Vite
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- lucide-react
+- Hero
+- About
+- Work experience
+- Education
+- Volunteering
+- Projects
+- Social links
 
-**Backend:**
-- Node.js
-- Express
-- TypeScript
-- tsx
+If the backend is unavailable, the frontend renders local fallback data and shows a banner.
 
-**Tools:**
-- pnpm (monorepo)
-- ESLint
-- Prettier
-- Vitest
-- GitHub Actions
+## Project Structure
 
-## 📄 License
+```text
+frontend/   React app + sections + ui
+backend/    Express API + profile data + tests
+shared/     Shared TypeScript profile types
+docs/       API and Git workflow docs
+```
 
-MIT
+## CI
 
-## 🤝 Contributing
+GitHub Actions workflow: `.github/workflows/ci.yml`
 
-This is a personal website project, but feel free to fork and adapt for your own use!
+Runs on pushes/PRs to `main`:
+
+- `pnpm install --frozen-lockfile`
+- `pnpm lint`
+- `pnpm typecheck`
+- `pnpm test`
+- `pnpm build`
