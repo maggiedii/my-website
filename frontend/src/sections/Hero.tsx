@@ -27,8 +27,10 @@ export function Hero({ name, tagline }: HeroProps) {
         <Avatar className="mx-auto h-20 w-20 border-2 border-pastel-pink shadow-pastel-md animate-slide-up">
           <AvatarFallback className="text-xl font-semibold">{initials || 'YN'}</AvatarFallback>
         </Avatar>
-        <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-pastel-pink-dark via-pastel-lavender to-pastel-pink-dark bg-clip-text text-transparent animate-slide-up">
-          {name}
+        <h1 className="text-6xl md:text-7xl font-bold animate-slide-up">
+          <span className="inline-block bg-gradient-to-r from-pastel-pink-dark via-pastel-lavender to-pastel-pink-dark bg-clip-text text-transparent leading-[1.15] md:leading-[1.12] pb-[0.08em]">
+            {name}
+          </span>
         </h1>
         <p className="text-2xl md:text-3xl text-muted-foreground animate-slide-up">
           {tagline}
