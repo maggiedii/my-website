@@ -2,127 +2,126 @@
   "_comment": "Edit name/tagline/bio plus each array: workExperience, education, volunteering, projects, socials. Restart backend after updates.",
   "name": "Maggie Di",
   "tagline": "Student | Designer | Creator",
-  "bio": "Hello! I'm a passionate software engineer with a love for building beautiful, functional web applications. I specialize in full-stack development with React, TypeScript, and Node.js.\n\nI believe in writing clean, maintainable code and creating delightful user experiences. When I'm not coding, you can find me exploring new technologies, contributing to open source, or sharing knowledge with the community.\n\nI'm always excited to collaborate on interesting projects and connect with fellow developers!",
-  "workExperience": [
-    {
-      "company": "Tech Company Inc.",
-      "role": "Senior Software Engineer",
-      "duration": "2022 - Present",
-      "description": "Leading frontend development for customer-facing applications using React and TypeScript. Mentoring junior developers and establishing best practices for the team."
-    },
-    {
-      "company": "Startup Co.",
-      "role": "Full Stack Developer",
-      "duration": "2020 - 2022",
-      "description": "Built scalable web applications from scratch using the MERN stack. Collaborated with designers to create intuitive user interfaces and implemented RESTful APIs."
-    },
-    {
-      "company": "Digital Agency",
-      "role": "Frontend Developer",
-      "duration": "2018 - 2020",
-      "description": "Developed responsive websites and web applications for various clients. Worked with modern frameworks and ensured cross-browser compatibility."
-    }
-  ],
-  "education": [
-    {
-      "institution": "University Name",
-      "degree": "Bachelor of Science in Computer Science",
-      "duration": "2014 - 2018"
-    },
-    {
-      "institution": "Online Learning Platform",
-      "degree": "Full Stack Web Development Certificate",
-      "duration": "2018"
-    }
-  ],
-  "volunteering": [
-    {
-      "organization": "Code for Good",
-      "role": "Volunteer Developer",
-      "duration": "2021 - Present",
-      "description": "Building web applications for non-profit organizations to help them better serve their communities."
-    },
-    {
-      "organization": "Tech Mentorship Program",
-      "role": "Mentor",
-      "duration": "2020 - Present",
-      "description": "Mentoring aspiring developers and helping them navigate their career paths in tech."
-    }
-  ],
-  "projects": [
-    {
-      "title": "Personal Portfolio Website",
-      "description": "A modern, responsive portfolio website built with React, TypeScript, and Express. Features a beautiful pastel pink design and smooth animations.",
-      "technologies": [
-        "React",
-        "TypeScript",
-        "Express",
-        "Tailwind CSS",
-        "Vite"
-      ],
-      "link": "https://github.com/yourusername/portfolio"
-    },
-    {
-      "title": "Task Management App",
-      "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      "technologies": [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Socket.io",
-        "Redux"
-      ],
-      "link": "https://github.com/yourusername/task-app"
-    },
-    {
-      "title": "Weather Dashboard",
-      "description": "A weather forecast application that provides detailed weather information with beautiful visualizations and location-based forecasts.",
-      "technologies": [
-        "React",
-        "TypeScript",
-        "Weather API",
-        "Chart.js"
-      ],
-      "link": "https://github.com/yourusername/weather-dashboard"
-    },
-    {
-      "title": "E-commerce Platform",
-      "description": "A full-featured e-commerce platform with product management, shopping cart, payment integration, and order tracking.",
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Stripe",
-        "PostgreSQL",
-        "Prisma"
-      ],
-      "link": "https://github.com/yourusername/ecommerce"
-    }
-  ],
-  "socials": [
-    {
-      "platform": "LinkedIn",
-      "url": "https://linkedin.com/in/yourprofile",
-      "icon": "linkedin"
-    },
-    {
-      "platform": "YouTube",
-      "url": "https://youtube.com/@yourchannel",
-      "icon": "youtube"
-    },
-    {
-      "platform": "Instagram",
-      "url": "https://instagram.com/yourhandle",
-      "icon": "instagram"
-    },
-    {
-      "platform": "TikTok",
-      "url": "https://tiktok.com/@yourhandle",
-      "icon": "video"
-    },
-    {
-      "platform": "GitHub",
-      "url": "https://github.com/yourusername",
-      "icon": "github"
-    }
-  ]
+  "bio": "Hello, welcome to my little corner of the internet! I'm a student at the University of British Columbia, studying Environment & Sustainability. I'm also a student border services officer at the Canada Border Services Agency (CBSA). I'm a passionate about sustainability and the environment, and I'm always looking for new ways to learn and grow.",
+  {
+    "company": "Canada Border Services Agency (CBSA)",
+    "role": "Travel Services Representative",
+    "duration": "May 2024 - August 2024",
+    "description": "Leading frontend development for customer-facing applications using React and TypeScript. Mentoring junior developers and establishing best practices for the team."
+  },
+  {
+    "company": "Canada Border Services Agency (CBSA)",
+    "role": "Student Border Services Officer",
+    "duration": "May 2025 - August 2025",
+    "description": "Built scalable web applications from scratch using the MERN stack. Collaborated with designers to create intuitive user interfaces and implemented RESTful APIs."
+  },
+  {
+    "company": "Digital Agency",
+    "role": "Frontend Developer",
+    "duration": "2018 - 2020",
+    "description": "Developed responsive websites and web applications for various clients. Worked with modern frameworks and ensured cross-browser compatibility."
+  }
+],
+"education": [
+  {
+    "institution": "University of British Columbia",
+    "degree": "Bachelor of Arts inEnvironment & Sustainability",
+    "duration": "2023 - 2026"
+  },
+  {
+    "institution": "Simon Fraser University",
+    "degree": "Bachelor of Science in Geographical Information Systems",
+    "duration": "2020 - 2023"
+  }
+],
+"volunteering": [
+  {
+    "organization": "Code for Good",
+    "role": "Volunteer Developer",
+    "duration": "2021 - Present",
+    "description": "Building web applications for non-profit organizations to help them better serve their communities."
+  },
+  {
+    "organization": "Tech Mentorship Program",
+    "role": "Mentor",
+    "duration": "2020 - Present",
+    "description": "Mentoring aspiring developers and helping them navigate their career paths in tech."
+  }
+],
+"projects": [
+  {
+    "title": "Personal Portfolio Website",
+    "description": "A modern, responsive portfolio website built with React, TypeScript, and Express. Features a beautiful pastel pink design and smooth animations.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Express",
+      "Tailwind CSS",
+      "Vite"
+    ],
+    "link": "https://github.com/yourusername/portfolio"
+  },
+  {
+    "title": "Task Management App",
+    "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Socket.io",
+      "Redux"
+    ],
+    "link": "https://github.com/yourusername/task-app"
+  },
+  {
+    "title": "Weather Dashboard",
+    "description": "A weather forecast application that provides detailed weather information with beautiful visualizations and location-based forecasts.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Weather API",
+      "Chart.js"
+    ],
+    "link": "https://github.com/yourusername/weather-dashboard"
+  },
+  {
+    "title": "E-commerce Platform",
+    "description": "A full-featured e-commerce platform with product management, shopping cart, payment integration, and order tracking.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Stripe",
+      "PostgreSQL",
+      "Prisma"
+    ],
+    "link": "https://github.com/yourusername/ecommerce"
+  }
+],
+"socials": [
+  {
+    "platform": "LinkedIn",
+    "url": "https://linkedin.com/in/yourprofile",
+    "icon": "linkedin"
+  },
+  {
+    "platform": "YouTube",
+    "url": "https://youtube.com/@yourchannel",
+    "icon": "youtube"
+  },
+  {
+    "platform": "Instagram",
+    "url": "https://instagram.com/yourhandle",
+    "icon": "instagram"
+  },
+  {
+    "platform": "TikTok",
+    "url": "https://tiktok.com/@yourhandle",
+    "icon": "video"
+  },
+  {
+    "platform": "GitHub",
+    "url": "https://github.com/yourusername",
+    "icon": "github"
+  }
+]
 }
