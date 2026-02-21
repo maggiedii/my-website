@@ -179,6 +179,7 @@ This file drives:
 5. Added GitHub Actions workflow to run install/lint/typecheck/test/build on PR/push to `main`.
 6. Set `shared` package `types` to source entry (`./src/index.ts`) so backend typechecking resolves reliably without requiring prebuilt shared artifacts.
 7. Fixed Hero title descender clipping (for letters like `g`) by isolating gradient text on an inner span and using explicit local line-height/padding.
+8. Added one-time Hero name typing animation on load; respects `prefers-reduced-motion` by showing full text immediately.
 
 ---
 
