@@ -186,6 +186,21 @@ This file drives:
 - `pnpm` may print an **Ignored build scripts** warning for `esbuild`; this is expected with pnpm’s build-approval model and does not block local lint/typecheck/test/build.
 - No database is used in v1; all profile content is file-based JSON.
 
+### Incident Log (2026-02-21)
+
+- **Symptom:** `pnpm dev` failed with `Cannot find module './parse'` from `shell-quote` via `concurrently`.
+- **Root cause:** Corrupted/mutated pnpm store content caused an incomplete nested install at `node_modules/.pnpm/shell-quote@1.8.3/...` (missing `parse.js`).
+- **Fix executed:**
+  - `pnpm install --frozen-lockfile --force --reporter=append-only`
+- **Verification executed:**
+  - `node -e "require('concurrently'); console.log('ok')"`
+  - `pnpm dev` + `curl http://localhost:3000/api/health` + `curl http://localhost:3000/api/profile`
+  - `pnpm lint`
+  - `pnpm typecheck`
+  - `pnpm test`
+  - `pnpm build`
+- **Result:** Incident resolved; root `pnpm dev` and full quality gates pass.
+
 ---
 
 ## Open Tasks
@@ -193,4 +208,3 @@ This file drives:
 - [ ] Customize `backend/src/data/profile.json` with real personal content.
 - [ ] Push Phase 5 commits and open PR.
 - [ ] Optionally add deployment docs (Vercel + Render/Railway) after merge.
-
