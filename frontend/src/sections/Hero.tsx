@@ -19,32 +19,53 @@ export function Hero({ name, tagline }: HeroProps) {
 
   useEffect(() => {
     if (!name) {
-      setTypedName('');
-      return;
+      const clearNameTimeoutId = window.setTimeout(() => {
+        setTypedName('');
+      }, 0);
+
+      return () => {
+        window.clearTimeout(clearNameTimeoutId);
+      };
     }
 
-    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setTypedName(name);
-      return;
-    }
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    setTypedName('');
+    if (prefersReducedMotion) {
+      const fullNameTimeoutId = window.setTimeout(() => {
+        setTypedName(name);
+      }, 0);
+
+      return () => {
+        window.clearTimeout(fullNameTimeoutId);
+      };
+    }
 
     const totalDurationMs = 700;
     const delayMs = Math.max(30, Math.floor(totalDurationMs / Math.max(1, name.length)));
     let index = 0;
+    let intervalId: number | undefined;
 
-    const intervalId = window.setInterval(() => {
-      index += 1;
-      setTypedName(name.slice(0, index));
+    const startTypingTimeoutId = window.setTimeout(() => {
+      setTypedName('');
 
-      if (index >= name.length) {
-        window.clearInterval(intervalId);
-      }
-    }, delayMs);
+      intervalId = window.setInterval(() => {
+        index += 1;
+        setTypedName(name.slice(0, index));
+
+        if (index >= name.length) {
+          window.clearInterval(intervalId);
+        }
+      }, delayMs);
+    }, 0);
 
     return () => {
-      window.clearInterval(intervalId);
+      window.clearTimeout(startTypingTimeoutId);
+      if (intervalId) {
+        window.clearInterval(intervalId);
+      }
     };
   }, [name]);
 

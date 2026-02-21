@@ -64,10 +64,11 @@ describe('App', () => {
 
     render(<App />);
 
-    await waitFor(() =>
-      expect(
-        screen.getByRole('heading', { level: 1, name: mockProfile.name })
-      ).toBeInTheDocument()
+    await waitFor(
+      () => {
+        expect(screen.getByRole('heading', { level: 1, name: mockProfile.name })).toBeInTheDocument();
+      },
+      { timeout: 1500 }
     );
 
     expect(screen.getByRole('heading', { level: 3, name: 'About Me' })).toBeInTheDocument();
@@ -86,7 +87,12 @@ describe('App', () => {
     await waitFor(() =>
       expect(screen.getByText(/Using local data - backend server may be offline/i)).toBeInTheDocument()
     );
-    expect(screen.getByRole('heading', { level: 1, name: /Your Name/i })).toBeInTheDocument();
+    await waitFor(
+      () => {
+        expect(screen.getByRole('heading', { level: 1, name: /Your Name/i })).toBeInTheDocument();
+      },
+      { timeout: 1500 }
+    );
   });
 
   afterAll(() => {

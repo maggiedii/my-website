@@ -180,6 +180,8 @@ This file drives:
 6. Set `shared` package `types` to source entry (`./src/index.ts`) so backend typechecking resolves reliably without requiring prebuilt shared artifacts.
 7. Fixed Hero title descender clipping (for letters like `g`) by isolating gradient text on an inner span and using explicit local line-height/padding.
 8. Added one-time Hero name typing animation on load; respects `prefers-reduced-motion` by showing full text immediately.
+9. Refined Hero typing effect to avoid synchronous state updates inside `useEffect` (lint-safe timer callbacks) and added a `window.matchMedia` existence guard for non-browser test environments.
+10. Updated frontend tests to await the typed Hero heading so animation behavior remains enabled without test flakiness.
 
 ---
 
@@ -202,6 +204,20 @@ This file drives:
   - `pnpm test`
   - `pnpm build`
 - **Result:** Incident resolved; root `pnpm dev` and full quality gates pass.
+
+### Incident Log (2026-02-21 - Follow-up)
+
+- **Symptom:** `pnpm dev` backend process crashed with `ERR_MODULE_NOT_FOUND` for `dotenv/index.js`.
+- **Root cause:** Corrupted local package contents under `node_modules/.pnpm/dotenv@16.6.1/...` (incomplete package files).
+- **Fix executed:**
+  - `pnpm install --frozen-lockfile --force`
+- **Verification executed:**
+  - `pnpm lint`
+  - `pnpm typecheck`
+  - `pnpm test`
+  - `pnpm build`
+  - `pnpm dev` + `curl http://localhost:3000/api/health` + `curl http://localhost:3000/api/profile`
+- **Result:** Backend dev startup restored; typing animation change and all quality gates pass.
 
 ---
 

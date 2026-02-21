@@ -1,13 +1,18 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { Hero } from '../sections/Hero';
 import { Bio } from '../sections/Bio';
 
 describe('Hero Component', () => {
-  it('renders name and tagline', () => {
+  it('renders name and tagline', async () => {
     render(<Hero name="John Doe" tagline="Software Engineer" />);
-    
-    expect(screen.getByText('John Doe')).toBeInTheDocument();
+
+    await waitFor(
+      () => {
+        expect(screen.getByRole('heading', { level: 1, name: 'John Doe' })).toBeInTheDocument();
+      },
+      { timeout: 1500 }
+    );
     expect(screen.getByText('Software Engineer')).toBeInTheDocument();
   });
 
