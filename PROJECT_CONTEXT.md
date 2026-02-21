@@ -34,6 +34,7 @@ Production personal website monorepo with:
 ### Prerequisites
 
 ```bash
+fnm use
 corepack enable
 pnpm install --frozen-lockfile
 ```
@@ -74,6 +75,7 @@ pnpm build
 ├── package.json
 ├── pnpm-workspace.yaml
 ├── pnpm-lock.yaml
+├── .nvmrc
 ├── docs/
 │   ├── API.md
 │   └── GITHUB_GUIDE.md
@@ -182,6 +184,7 @@ This file drives:
 8. Added one-time Hero name typing animation on load; respects `prefers-reduced-motion` by showing full text immediately.
 9. Refined Hero typing effect to avoid synchronous state updates inside `useEffect` (lint-safe timer callbacks) and added a `window.matchMedia` existence guard for non-browser test environments.
 10. Updated frontend tests to await the typed Hero heading so animation behavior remains enabled without test flakiness.
+11. Installed `fnm`, pinned project runtime with `.nvmrc` (`22`), and validated full lint/typecheck/test/build + dev smoke on Node `v22.22.0` for stability over Node 25.
 
 ---
 
@@ -218,6 +221,20 @@ This file drives:
   - `pnpm build`
   - `pnpm dev` + `curl http://localhost:3000/api/health` + `curl http://localhost:3000/api/profile`
 - **Result:** Backend dev startup restored; typing animation change and all quality gates pass.
+
+### Incident Log (2026-02-21 - SIGTERM Diagnostics)
+
+- **Symptom:** `pnpm dev` occasionally ended with child process exit codes `SIGTERM` / `143`, leading Safari to show connection failures after shutdown.
+- **Root cause:** Parent dev process termination (external signal/session interruption), not an application runtime crash.
+- **Fix executed:**
+  - `pnpm install --frozen-lockfile --force`
+  - Added Node version pinning via `.nvmrc` and switched runtime to Node 22 LTS using `fnm`.
+- **Verification executed:**
+  - `pnpm dev` startup checks + `lsof` listeners on `5173` and `3000`
+  - `curl -I http://localhost:5173/`
+  - `curl http://localhost:3000/api/health`
+  - Full quality gates under Node 22 (`pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build`)
+- **Result:** Stable local startup confirmed; guidance set to keep dev server in a persistent session and use the exact Vite URL.
 
 ---
 
