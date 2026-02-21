@@ -43,7 +43,7 @@ export function Hero({ name, tagline }: HeroProps) {
       };
     }
 
-    const totalDurationMs = 700;
+    const totalDurationMs = 1200;
     const delayMs = Math.max(30, Math.floor(totalDurationMs / Math.max(1, name.length)));
     let index = 0;
     let intervalId: number | undefined;

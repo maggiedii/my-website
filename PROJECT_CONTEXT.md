@@ -185,6 +185,7 @@ This file drives:
 9. Refined Hero typing effect to avoid synchronous state updates inside `useEffect` (lint-safe timer callbacks) and added a `window.matchMedia` existence guard for non-browser test environments.
 10. Updated frontend tests to await the typed Hero heading so animation behavior remains enabled without test flakiness.
 11. Installed `fnm`, pinned project runtime with `.nvmrc` (`22`), and validated full lint/typecheck/test/build + dev smoke on Node `v22.22.0` for stability over Node 25.
+12. Slowed Hero name typing animation by increasing total typing duration from `700ms` to `1100ms` for a softer entrance effect.
 
 ---
 
