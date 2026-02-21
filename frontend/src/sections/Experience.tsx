@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Briefcase } from 'lucide-react';
 import type { WorkExperience as WorkExperienceType } from 'shared';
 
 interface ExperienceProps {
@@ -16,10 +17,17 @@ export function Experience({ workExperience }: ExperienceProps) {
           {workExperience.map((exp, index) => (
             <Card key={index} className="animate-slide-up hover:scale-[1.02] transition-transform">
               <CardHeader>
-                <CardTitle className="text-2xl">{exp.role}</CardTitle>
-                <CardDescription className="text-lg">
-                  {exp.company} • {exp.duration}
-                </CardDescription>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-pastel-pink-light rounded-lg">
+                    <Briefcase className="w-6 h-6 text-pastel-pink-dark" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-2xl">{exp.role}</CardTitle>
+                    <CardDescription className="text-lg">
+                      {exp.company} • {exp.duration}
+                    </CardDescription>
+                  </div>
+                </div>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">{exp.description}</p>
