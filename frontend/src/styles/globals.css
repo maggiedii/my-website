@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 40% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 20%;
+    --primary: 350 100% 88%;
+    --primary-foreground: 350 100% 25%;
+    --secondary: 240 100% 95%;
+    --secondary-foreground: 240 100% 25%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 240 100% 95%;
+    --accent-foreground: 240 100% 25%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 350 100% 88%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 210 40% 10%;
+    --foreground: 0 0% 98%;
+    --card: 210 40% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 210 40% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 350 100% 75%;
+    --primary-foreground: 350 100% 15%;
+    --secondary: 240 100% 20%;
+    --secondary-foreground: 240 100% 90%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 64%;
+    --accent: 240 100% 20%;
+    --accent-foreground: 240 100% 90%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 350 100% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@layer utilities {
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
