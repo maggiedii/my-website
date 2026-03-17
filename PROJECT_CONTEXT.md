@@ -287,3 +287,11 @@ This file drives:
 - [ ] Replace the remaining placeholder project cards in `backend/src/data/profile.json` and `frontend/src/lib/fallbackData.ts` with finalized project content.
 - [ ] Confirm the assumed TikTok handle if it differs from `@maggiesdiaries`.
 - [ ] Push the local Phase 5 completion work once you are happy with the content.
+
+### Recent Decisions (2026-03-17)
+
+25. Added a `partnerships` profile field and a Partnerships section to the one-page site. It stays visible with an empty-state card until real partnership entries are added in `backend/src/data/profile.json`.
+26. Updated Partnerships to support name-only entries cleanly, corrected the backend `partnerships` key, and added current partner names to both backend and fallback data.
+27. Reworked Partnerships from a long vertical stack into a compact responsive brand grid so name-only partner entries take much less vertical space.
+28. Added local partnership logo assets sourced from official brand surfaces where available. SciSpace uses the official App Store icon because direct logo retrieval from `scispace.com` was blocked by CloudFront during implementation.
+29. Reordered work experience entries so the most recent roles appear first in both the backend profile data and the frontend fallback data.

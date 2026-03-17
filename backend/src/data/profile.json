@@ -1,15 +1,9 @@
 {
-  "_comment": "Edit name/tagline/bio plus each array: workExperience, education, volunteering, projects, socials. Restart backend after updates.",
+  "_comment": "Edit name/tagline/bio plus each array: workExperience, education, volunteering, partnerships, projects, socials. Restart backend after updates.",
   "name": "Maggie Di",
   "tagline": "Environment & Sustainability Student | Content Creator",
   "bio": "Hello, welcome to my little corner of the internet! I'm Maggie, a student at the University of British Columbia studying Environment & Sustainability.\n\nOutside the classroom, I create content and have worked in public-facing roles where clear communication, organization, and empathy matter. I'm especially interested in sustainability, community impact, and thoughtful storytelling.\n\nThis site is a simple place to share what I'm learning, what I've worked on, and a few projects that are easy to update over time. Feel free to reach out to me if you have any questions or want to collaborate on a project!",
   "workExperience": [
-    {
-      "company": "Port Moody Station Museum | Canadian Heritage",
-      "role": "Museum Assistant Curator Intern",
-      "duration": "May 2022 - August 2022",
-      "description": "Assisted with the curation of the museum's collection and helped with the museum's events and programs."
-    },
     {
       "company": "Canada Border Services Agency (CBSA)",
       "role": "Student Border Services Officer",
@@ -21,6 +15,12 @@
       "role": "Summer Events Coordinator Intern",
       "duration": "May 2025 - August 2025",
       "description": "Planned and ran community programming, coordinated schedules and logistics, and helped create welcoming events for children and families."
+    },
+    {
+      "company": "Port Moody Station Museum | Canadian Heritage",
+      "role": "Museum Assistant Curator Intern",
+      "duration": "May 2022 - August 2022",
+      "description": "Assisted with the curation of the museum's collection and helped with the museum's events and programs."
     }
   ],
   "education": [
@@ -52,6 +52,41 @@
       "role": "Social Media Manager",
       "duration": "April 2024 - September 2025",
       "description": "Managed the UBC Student Environment Centre's social media accounts and created content for the organization."
+    }
+  ],
+  "Brands I've Worked With": [
+    {
+      "partner": "iQIYI",
+      "logo": "/logos/partnerships/iqiyi.svg"
+    },
+    {
+      "partner": "RAYCON",
+      "logo": "/logos/partnerships/raycon.png"
+    },
+    {
+      "partner": "Goodfood Canada",
+      "logo": "/logos/partnerships/goodfood.svg"
+    },
+    {
+      "partner": "Ana Luisa",
+      "logo": "/logos/partnerships/ana-luisa.png"
+    },
+    {
+      "partner": "SciSpace",
+      "logo": "/logos/partnerships/scispace.jpg"
+    },
+    {
+      "partner": "TOUN28",
+      "logo": "/logos/partnerships/toun28.svg",
+      "logoBackground": "dark"
+    },
+    {
+      "partner": "Hetras Korea",
+      "logo": "/logos/partnerships/hetras-korea.png"
+    },
+    {
+      "partner": "Y.O.U Hair Salon",
+      "logo": "/logos/partnerships/you-hair-salon.png"
     }
   ],
   "projects": [

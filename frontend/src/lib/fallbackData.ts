@@ -7,17 +7,17 @@ export const fallbackData: Profile = {
   workExperience: [
     {
       company: 'Canada Border Services Agency (CBSA)',
-      role: 'Travel Services Representative',
-      duration: 'May 2024 - August 2024',
-      description:
-        'Supported travelers in a fast-paced airport environment, answered questions clearly, and helped keep day-to-day service running smoothly.',
-    },
-    {
-      company: 'Canada Border Services Agency (CBSA)',
       role: 'Student Border Services Officer',
       duration: 'May 2025 - August 2025',
       description:
         'Worked in a high-responsibility public service role that required professionalism, attention to detail, and confident communication with travelers.',
+    },
+    {
+      company: 'Canada Border Services Agency (CBSA)',
+      role: 'Travel Services Representative',
+      duration: 'May 2024 - August 2024',
+      description:
+        'Supported travelers in a fast-paced airport environment, answered questions clearly, and helped keep day-to-day service running smoothly.',
     },
     {
       company: "St. Andrew's United Church",
@@ -58,6 +58,41 @@ export const fallbackData: Profile = {
       duration: '2020 - Present',
       description:
         'Shared encouragement and practical guidance with students exploring new skills and career paths.',
+    },
+  ],
+  partnerships: [
+    {
+      partner: 'iQIYI',
+      logo: '/logos/partnerships/iqiyi.svg',
+    },
+    {
+      partner: 'RAYCON',
+      logo: '/logos/partnerships/raycon.png',
+    },
+    {
+      partner: 'Goodfood Canada',
+      logo: '/logos/partnerships/goodfood.svg',
+    },
+    {
+      partner: 'Ana Luisa',
+      logo: '/logos/partnerships/ana-luisa.png',
+    },
+    {
+      partner: 'SciSpace',
+      logo: '/logos/partnerships/scispace.jpg',
+    },
+    {
+      partner: 'TOUN28',
+      logo: '/logos/partnerships/toun28.svg',
+      logoBackground: 'dark',
+    },
+    {
+      partner: 'Hetras Korea',
+      logo: '/logos/partnerships/hetras-korea.png',
+    },
+    {
+      partner: 'Y.O.U Hair Salon',
+      logo: '/logos/partnerships/you-hair-salon.png',
     },
   ],
   projects: [

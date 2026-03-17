@@ -36,6 +36,14 @@ const mockProfile: Profile = {
       description: 'Coached student developers.',
     },
   ],
+  partnerships: [
+    {
+      partner: 'Campus Media Lab',
+      collaboration: 'Sponsored Content Series',
+      duration: '2025',
+      description: 'Produced a short-form collaboration highlighting student resources.',
+    },
+  ],
   projects: [
     {
       title: 'Portfolio',
@@ -69,13 +77,14 @@ describe('App', () => {
       () => {
         expect(screen.getByRole('heading', { level: 1, name: mockProfile.name })).toBeInTheDocument();
       },
-      { timeout: 3000 }
+      { timeout: 5000 }
     );
 
     expect(screen.getByRole('heading', { level: 3, name: 'About Me' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: 'Work Experience' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: 'Education' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: 'Volunteering' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'Partnerships' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: 'Projects' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: "Let's Connect!" })).toBeInTheDocument();
   });

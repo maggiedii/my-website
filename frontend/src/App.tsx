@@ -7,6 +7,7 @@ import { Bio } from './sections/Bio';
 import { Experience } from './sections/Experience';
 import { Education } from './sections/Education';
 import { Volunteering } from './sections/Volunteering';
+import { Partnerships } from './sections/Partnerships';
 import { Projects } from './sections/Projects';
 import { Footer } from './sections/Footer';
 import { AlertCircle } from 'lucide-react';
@@ -16,6 +17,7 @@ const navItems = [
   { label: 'Experience', href: '#experience' },
   { label: 'Education', href: '#education' },
   { label: 'Volunteering', href: '#volunteering' },
+  { label: 'Partnerships', href: '#partnerships' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -97,6 +99,7 @@ function App() {
       <Experience workExperience={profile.workExperience} />
       <Education education={profile.education} />
       <Volunteering volunteering={profile.volunteering} />
+      <Partnerships partnerships={profile.partnerships} />
       <Projects projects={profile.projects} />
       <Footer socials={profile.socials} />
     </div>

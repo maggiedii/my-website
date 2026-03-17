@@ -28,6 +28,16 @@ export interface Volunteering {
   description: string;
 }
 
+export interface Partnership {
+  partner: string;
+  collaboration?: string;
+  duration?: string;
+  description?: string;
+  link?: string;
+  logo?: string;
+  logoBackground?: 'light' | 'dark';
+}
+
 export interface Project {
   title: string;
   description: string;
@@ -42,6 +52,7 @@ export interface Profile {
   workExperience: WorkExperience[];
   education: Education[];
   volunteering: Volunteering[];
+  partnerships: Partnership[];
   projects: Project[];
   socials: SocialLink[];
 }
