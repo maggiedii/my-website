@@ -207,6 +207,7 @@ This file drives:
 22. Added workspace-level `typescript` and `@types/node`, pointed editor settings at the workspace TypeScript SDK, and expanded backend `typeRoots` to include the repo root for more reliable `@types/node` resolution in Cursor/VS Code.
 23. Added the Seoul National University exchange semester to both the backend profile data and the frontend fallback education list so the education section stays consistent online and offline.
 24. Increased spacing in the Projects section by widening card gaps and section/tab heading margins for a more open layout.
+25. Added a new `Hiring Pack Prototype` project entry to both the backend profile data and the frontend fallback project list, leaving description and technologies empty as placeholders.
 
 ---
 

@@ -85,6 +85,11 @@ export const fallbackData: Profile = {
         'A placeholder for volunteer, event, or community-facing work. Update it with the project goal, audience, and what you contributed.',
       technologies: ['Coordination', 'Planning', 'Outreach'],
     },
+    {
+      title: 'Hiring Pack Prototype',
+      description: '',
+      technologies: [],
+    },
   ],
   socials: [
     {

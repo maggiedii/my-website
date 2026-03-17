@@ -5,20 +5,20 @@
   "bio": "Hello, welcome to my little corner of the internet! I'm Maggie, a student at the University of British Columbia studying Environment & Sustainability.\n\nOutside the classroom, I create content and have worked in public-facing roles where clear communication, organization, and empathy matter. I'm especially interested in sustainability, community impact, and thoughtful storytelling.\n\nThis site is a simple place to share what I'm learning, what I've worked on, and a few projects that are easy to update over time. Feel free to reach out to me if you have any questions or want to collaborate on a project!",
   "workExperience": [
     {
-      "company": "Canada Border Services Agency (CBSA)",
-      "role": "Travel Services Representative",
-      "duration": "May 2024 - August 2024",
-      "description": "Supported travelers in a fast-paced airport environment, answered questions clearly, and helped keep day-to-day service running smoothly."
+      "company": "Port Moody Station Museum | Canadian Heritage",
+      "role": "Museum Assistant Curator Intern",
+      "duration": "May 2022 - August 2022",
+      "description": "Assisted with the curation of the museum's collection and helped with the museum's events and programs."
     },
     {
       "company": "Canada Border Services Agency (CBSA)",
       "role": "Student Border Services Officer",
       "duration": "May 2024 - August 2025",
-      "description": "Worked in a high-responsibility public service role that required professionalism, attention to detail, and confident communication with travelers."
+      "description": "Worked in a high-responsibility public service role that required professionalism, attention to detail, and confident communication with travelers. Location was at the Vancouver International Airport and Peach Arch Border Crossing"
     },
     {
       "company": "St. Andrew's United Church",
-      "role": "Summer Events Coordinator",
+      "role": "Summer Events Coordinator Intern",
       "duration": "May 2025 - August 2025",
       "description": "Planned and ran community programming, coordinated schedules and logistics, and helped create welcoming events for children and families."
     }
@@ -91,7 +91,17 @@
     },
     {
       "title": "AI Closet Planner",
-      "description": "A website that allows users to plan their closet using AI. It uses the OpenAI API to generate a closet plan based on the user's input.",
+      "description": "A website that allows users to plan their outfits in their closet using AI. It uses the OpenAI API to generate a closet plan based on the user's input.",
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "OpenAI API"
+      ]
+    },
+    {
+      "title": "Hiring Pack Prototype",
+      "description": "A prototype of a hiring pack for a company. It uses the OpenAI API to generate a hiring pack based on the user's input.",
       "technologies": [
         "JavaScript",
         "HTML",
