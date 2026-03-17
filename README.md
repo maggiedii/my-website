@@ -14,6 +14,7 @@ Production-ready personal website monorepo with a React/Vite frontend, Express b
 ## Quick Start
 
 ```bash
+fnm use 22
 corepack enable
 pnpm install --frozen-lockfile
 pnpm dev
@@ -23,6 +24,8 @@ Apps:
 
 - Frontend: `http://localhost:5173`
 - Backend: `http://localhost:3000`
+
+Node runtime: `22.x`
 
 ## Scripts
 
@@ -41,6 +44,13 @@ Run one workspace:
 ```bash
 pnpm --filter frontend dev
 pnpm --filter backend dev
+```
+
+If root `pnpm dev` ever fails after an interrupted install, refresh dependencies with:
+
+```bash
+rm -rf node_modules .pnpm-store
+pnpm install --frozen-lockfile
 ```
 
 ## Environment Variables
@@ -81,6 +91,7 @@ This single file powers all site sections:
 - Social links
 
 If the backend is unavailable, the frontend renders local fallback data and shows a banner.
+The frontend fallback content lives in `frontend/src/lib/fallbackData.ts` and should usually be kept in sync with the backend profile data.
 
 ## Project Structure
 

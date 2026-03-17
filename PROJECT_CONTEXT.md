@@ -1,7 +1,7 @@
 # PROJECT CONTEXT
 
-**Last Updated:** 2026-02-21  
-**Status:** Phase 5 complete in workspace (quality gates passing locally)
+**Last Updated:** 2026-03-13  
+**Status:** Workspace stabilized on Node 22; root dev, quality gates, and runtime smoke all passing locally
 
 ---
 
@@ -19,13 +19,19 @@ Production personal website monorepo with:
 ## Current Workspace Status
 
 - Phases 0-4 are committed on `main`.
-- Phase 5 work (tests, CI, polish, docs sync) is implemented in the working tree.
-- Local verification succeeded:
+- Phase 5 work is implemented locally, including tests, CI, docs sync, and content cleanup.
+- Local verification succeeded on **2026-03-13** with Node `v22.22.0`:
   - `pnpm install --frozen-lockfile`
+  - `node -e "require('concurrently'); console.log('require ok')"`
+  - `pnpm dev`
+  - `curl http://localhost:3000/api/health`
+  - `curl http://localhost:3000/api/profile`
+  - `curl -I http://localhost:5173/`
   - `pnpm lint`
   - `pnpm typecheck`
   - `pnpm test`
   - `pnpm build`
+- Root `pnpm dev` was repaired by removing the corrupted local install (`node_modules`, `.pnpm-store`) and reinstalling from `pnpm-lock.yaml`.
 
 ---
 
@@ -34,7 +40,7 @@ Production personal website monorepo with:
 ### Prerequisites
 
 ```bash
-fnm use
+fnm use 22
 corepack enable
 pnpm install --frozen-lockfile
 ```
@@ -160,6 +166,7 @@ VITE_API_URL=http://localhost:3000
 Edit profile content in:
 
 - `backend/src/data/profile.json`
+- `frontend/src/lib/fallbackData.ts` (keep fallback content aligned with the backend profile when you update live content)
 
 This file drives:
 
@@ -186,6 +193,20 @@ This file drives:
 10. Updated frontend tests to await the typed Hero heading so animation behavior remains enabled without test flakiness.
 11. Installed `fnm`, pinned project runtime with `.nvmrc` (`22`), and validated full lint/typecheck/test/build + dev smoke on Node `v22.22.0` for stability over Node 25.
 12. Slowed Hero name typing animation by increasing total typing duration from `700ms` to `1100ms` for a softer entrance effect.
+13. Added a global text-selection policy scoped to `#root` so only content text is highlightable while non-text UI regions remain non-selectable (`user-select` + `-webkit-user-select` for Safari).
+14. Replaced text-selection rules with stricter Safari-compatible explicit selectors (`#root, #root *` deny-all + explicit text opt-in) to stop broad page highlight in About and keep text-only selection site-wide.
+15. Fixed `/api/profile` data source issues by correcting invalid JSON and restoring the expected `volunteering` key; added an explicit favicon to eliminate the browser icon `404`.
+16. Added explicit backend `typeRoots` for `./node_modules/@types` so the editor resolves `@types/node` reliably from `backend/tsconfig.json`.
+15. Repaired a malformed local `rxjs` install that broke root `pnpm dev`; the fix required deleting `node_modules` and the repo-local `.pnpm-store` and reinstalling under Node 22 from the lockfile.
+16. Aligned runtime metadata on Node 22 by keeping `.nvmrc` at `22`, updating root `engines.node` to `>=22.0.0 <23`, and switching GitHub Actions to Node 22.
+17. Replaced remaining placeholder social and project links, removed the unused GitHub social button, and rewrote work descriptions to match the displayed roles instead of generic software-engineering copy.
+18. Synced `frontend/src/lib/fallbackData.ts` to the current profile content so the API-down experience matches the primary site content more closely.
+19. Removed unused Vite starter files and updated the document title away from the default scaffold values.
+20. Updated `docs/API.md` and `docs/GITHUB_GUIDE.md` so the documented example payload and local workflow match the current Node 22 setup.
+21. Updated the UBC education entry to include month-specific timing: `April 2023 - Expected Graduation: May 2026` in both live and fallback profile data.
+22. Added workspace-level `typescript` and `@types/node`, pointed editor settings at the workspace TypeScript SDK, and expanded backend `typeRoots` to include the repo root for more reliable `@types/node` resolution in Cursor/VS Code.
+23. Added the Seoul National University exchange semester to both the backend profile data and the frontend fallback education list so the education section stays consistent online and offline.
+24. Increased spacing in the Projects section by widening card gaps and section/tab heading margins for a more open layout.
 
 ---
 
@@ -193,6 +214,27 @@ This file drives:
 
 - `pnpm` may print an **Ignored build scripts** warning for `esbuild`; this is expected with pnpm’s build-approval model and does not block local lint/typecheck/test/build.
 - No database is used in v1; all profile content is file-based JSON.
+- Text selection rules were validated by code inspection plus runtime smoke; a real browser pass in Safari/Chrome is still the best final check after future style changes.
+
+### Incident Log (2026-03-13 - Root Dev Recovery)
+
+- **Symptom:** root `pnpm dev` failed immediately with `Cannot find module .../rxjs/dist/cjs/index.js` when loading `concurrently`.
+- **Root cause:** local install corruption under `node_modules/.pnpm/rxjs@7.8.2/...` produced duplicate suffixed directories such as `dist/cjs 2/` instead of the expected `dist/cjs/` entry layout.
+- **Fix executed:**
+  - `rm -rf node_modules .pnpm-store`
+  - `fnm use 22`
+  - `pnpm install --frozen-lockfile`
+- **Verification executed:**
+  - `node -e "require('concurrently'); console.log('require ok')"`
+  - `pnpm dev`
+  - `curl http://localhost:3000/api/health`
+  - `curl http://localhost:3000/api/profile`
+  - `curl -I http://localhost:5173/`
+  - `pnpm lint`
+  - `pnpm typecheck`
+  - `pnpm test`
+  - `pnpm build`
+- **Result:** root dev workflow restored; workspace is healthy again on Node 22.
 
 ### Incident Log (2026-02-21)
 
@@ -241,6 +283,6 @@ This file drives:
 
 ## Open Tasks
 
-- [ ] Customize `backend/src/data/profile.json` with real personal content.
-- [ ] Push Phase 5 commits and open PR.
-- [ ] Optionally add deployment docs (Vercel + Render/Railway) after merge.
+- [ ] Replace the remaining placeholder project cards in `backend/src/data/profile.json` and `frontend/src/lib/fallbackData.ts` with finalized project content.
+- [ ] Confirm the assumed TikTok handle if it differs from `@maggiesdiaries`.
+- [ ] Push the local Phase 5 completion work once you are happy with the content.

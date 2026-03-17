@@ -13,7 +13,7 @@ export function Projects({ projects }: ProjectsProps) {
   const featuredProjects = projects.slice(0, 2);
 
   const renderProjectGrid = (items: ProjectType[]) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
       {items.map((project, index) => (
         <Card key={index} className="animate-slide-up hover:scale-[1.02] transition-transform flex flex-col">
           <CardHeader>
@@ -47,11 +47,11 @@ export function Projects({ projects }: ProjectsProps) {
   );
 
   return (
-    <section id="projects" className="scroll-mt-24 py-20 px-4">
+    <section id="projects" className="scroll-mt-24 px-4 py-24">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-pastel-pink-dark mb-8 text-center">Projects</h2>
+        <h2 className="mb-10 text-center text-4xl font-bold text-pastel-pink-dark">Projects</h2>
         <Tabs defaultValue="featured" className="w-full">
-          <TabsList className="mb-6 grid w-full max-w-xs mx-auto grid-cols-2">
+          <TabsList className="mx-auto mb-8 grid w-full max-w-xs grid-cols-2">
             <TabsTrigger value="featured">Featured</TabsTrigger>
             <TabsTrigger value="all">All</TabsTrigger>
           </TabsList>

@@ -1,107 +1,109 @@
 {
   "_comment": "Edit name/tagline/bio plus each array: workExperience, education, volunteering, projects, socials. Restart backend after updates.",
   "name": "Maggie Di",
-  "tagline": "Student | Content Creator",
-  "bio": "Hello, welcome to my little corner of the internet! I'm a student at the University of British Columbia, studying Environment & Sustainability. I'm also a student border services officer at the Canada Border Services Agency (CBSA). I'm a passionate about sustainability and the environment, and I'm always looking for new ways to learn and grow.",
+  "tagline": "Environment & Sustainability Student | Content Creator",
+  "bio": "Hello, welcome to my little corner of the internet! I'm Maggie, a student at the University of British Columbia studying Environment & Sustainability.\n\nOutside the classroom, I create content and have worked in public-facing roles where clear communication, organization, and empathy matter. I'm especially interested in sustainability, community impact, and thoughtful storytelling.\n\nThis site is a simple place to share what I'm learning, what I've worked on, and a few projects that are easy to update over time. Feel free to reach out to me if you have any questions or want to collaborate on a project!",
   "workExperience": [
     {
       "company": "Canada Border Services Agency (CBSA)",
       "role": "Travel Services Representative",
       "duration": "May 2024 - August 2024",
-      "description": "Leading frontend development for customer-facing applications using React and TypeScript. Mentoring junior developers and establishing best practices for the team."
+      "description": "Supported travelers in a fast-paced airport environment, answered questions clearly, and helped keep day-to-day service running smoothly."
     },
     {
       "company": "Canada Border Services Agency (CBSA)",
       "role": "Student Border Services Officer",
-      "duration": "May 2025 - August 2025",
-      "description": "Built scalable web applications from scratch using the MERN stack. Collaborated with designers to create intuitive user interfaces and implemented RESTful APIs."
+      "duration": "May 2024 - August 2025",
+      "description": "Worked in a high-responsibility public service role that required professionalism, attention to detail, and confident communication with travelers."
     },
     {
       "company": "St. Andrew's United Church",
       "role": "Summer Events Coordinator",
-      "duration": " May 2023 - August 2023",
-      "description": "Developed responsive websites and web applications for various clients. Worked with modern frameworks and ensured cross-browser compatibility."
+      "duration": "May 2025 - August 2025",
+      "description": "Planned and ran community programming, coordinated schedules and logistics, and helped create welcoming events for children and families."
     }
   ],
   "education": [
     {
       "institution": "University of British Columbia",
       "degree": "Bachelor of Arts in Environment & Sustainability",
-      "duration": "2023 - 2026"
+      "duration": "April 2023 - Expected Graduation: May 2026"
+    },
+    {
+      "institution": "Seoul National University, South Korea",
+      "degree": "Exchange Semester",
+      "duration": "September 2025 - December 2025"
     },
     {
       "institution": "Simon Fraser University",
       "degree": "Bachelor of Sciences in Geographical Information Systems",
-      "duration": "2020 - 2023"
+      "duration": "September 2020 - April 2023"
     }
   ],
   "volunteering": [
     {
       "organization": "A Loving Spoonful",
-      "role": "Student Volunteer",
-      "duration": "2021 - Present",
-      "description": "Building web applications for non-profit organizations to help them better serve their communities."
+      "role": "Community Volunteer",
+      "duration": "May 2025 - August 2025",
+      "description": "Volunteered at A Loving Spoonful, a food bank in Vancouver, to help with food distribution and community outreach."
     },
     {
-      "organization": "Tech Mentorship Program",
-      "role": "Mentor",
-      "duration": "2020 - Present",
-      "description": "Mentoring aspiring developers and helping them navigate their career paths in tech."
+      "organization": "UBC Student Environment Centre",
+      "role": "Social Media Manager",
+      "duration": "April 2024 - September 2025",
+      "description": "Managed the UBC Student Environment Centre's social media accounts and created content for the organization."
     }
   ],
   "projects": [
     {
-      "title": "Personal Portfolio Website",
-      "description": "A modern, responsive portfolio website built with React, TypeScript, and Express. Features a beautiful pastel pink design and smooth animations.",
+      "title": "Personal Website",
+      "description": "A monorepo personal site built with React, TypeScript, Express, and Tailwind CSS. It pulls profile content from an API and falls back gracefully when the backend is unavailable.",
       "technologies": [
         "React",
         "TypeScript",
         "Express",
         "Tailwind CSS",
         "Vite"
-      ],
-      "link": "https://github.com/yourusername/portfolio"
+      ]
     },
     {
-      "title": "Task Management App",
-      "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      "title": "Study Cafe Locator",
+      "description": "A website that allows users to find study cafes near them. It uses the Google Maps API to get the coordinates of the cafes and then uses the City of Vancouver Open Data Portal to get the name and address of the cafes.",
       "technologies": [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Socket.io",
-        "Redux"
-      ],
-      "link": "https://github.com/yourusername/task-app"
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Open Data Portal",
+        "Google Maps API"
+      ]
     },
     {
-      "title": "Weather Dashboard",
-      "description": "A weather forecast application that provides detailed weather information with beautiful visualizations and location-based forecasts.",
+      "title": "Richmond Vancouver International Airport Flood Simulation",
+      "description": "A simulation of the flood that occurred at the Richmond Vancouver International Airport in 2019. It uses the City of Richmond Open Data Portal to get the coordinates of the airport and then uses the Google Maps API to get the coordinates of the flood.",
       "technologies": [
-        "React",
-        "TypeScript",
-        "Weather API",
-        "Chart.js"
-      ],
-      "link": "https://github.com/yourusername/weather-dashboard"
+        "Python",
+        "ArcGIS",
+        "ArcGIS Pro",
+        "ArcGIS Online",
+        "ArcGIS StoryMaps",
+        "ArcGIS StoryMaps"
+      ]
     },
     {
-      "title": "E-commerce Platform",
-      "description": "A full-featured e-commerce platform with product management, shopping cart, payment integration, and order tracking.",
+      "title": "AI Closet Planner",
+      "description": "A website that allows users to plan their closet using AI. It uses the OpenAI API to generate a closet plan based on the user's input.",
       "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Stripe",
-        "PostgreSQL",
-        "Prisma"
-      ],
-      "link": "https://github.com/yourusername/ecommerce"
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "OpenAI API"
+      ]
     }
   ],
   "socials": [
     {
       "platform": "LinkedIn",
-      "url": "https://linkedin.com/in/yourprofile",
+      "url": "https://linkedin.com/in/maggiedi",
       "icon": "linkedin"
     },
     {
@@ -111,17 +113,12 @@
     },
     {
       "platform": "Instagram",
-      "url": "https://instagram.com/yourhandle",
+      "url": "https://www.instagram.com/maggiie.diaries/",
       "icon": "instagram"
     },
     {
-      "platform": "TikTok",
-      "url": "https://tiktok.com/@yourhandle",
-      "icon": "video"
-    },
-    {
       "platform": "GitHub",
-      "url": "https://github.com/yourusername",
+      "url": "https://github.com/maggiedii",
       "icon": "github"
     }
   ]

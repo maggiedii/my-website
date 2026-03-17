@@ -1,82 +1,111 @@
 import type { Profile } from 'shared';
 
 export const fallbackData: Profile = {
-  name: 'Your Name',
-  tagline: 'Software Engineer | Designer | Creator',
-  bio: "Hello! I'm a passionate software engineer with a love for building beautiful, functional web applications. I specialize in full-stack development with React, TypeScript, and Node.js.\n\nI believe in writing clean, maintainable code and creating delightful user experiences. When I'm not coding, you can find me exploring new technologies, contributing to open source, or sharing knowledge with the community.\n\nI'm always excited to collaborate on interesting projects and connect with fellow developers!",
+  name: 'Maggie Di',
+  tagline: 'Student | Content Creator',
+  bio: "Hello, welcome to my little corner of the internet! I'm Maggie, a student at the University of British Columbia studying Environment & Sustainability.\n\nOutside the classroom, I create content and have worked in public-facing roles where clear communication, organization, and empathy matter. I'm especially interested in sustainability, community impact, and thoughtful storytelling.\n\nThis site is a simple place to share what I'm learning, what I've worked on, and a few projects that are easy to update over time.",
   workExperience: [
     {
-      company: 'Tech Company Inc.',
-      role: 'Senior Software Engineer',
-      duration: '2022 - Present',
+      company: 'Canada Border Services Agency (CBSA)',
+      role: 'Travel Services Representative',
+      duration: 'May 2024 - August 2024',
       description:
-        'Leading frontend development for customer-facing applications using React and TypeScript. Mentoring junior developers and establishing best practices for the team.',
+        'Supported travelers in a fast-paced airport environment, answered questions clearly, and helped keep day-to-day service running smoothly.',
     },
     {
-      company: 'Startup Co.',
-      role: 'Full Stack Developer',
-      duration: '2020 - 2022',
+      company: 'Canada Border Services Agency (CBSA)',
+      role: 'Student Border Services Officer',
+      duration: 'May 2025 - August 2025',
       description:
-        'Built scalable web applications from scratch using the MERN stack. Collaborated with designers to create intuitive user interfaces and implemented RESTful APIs.',
+        'Worked in a high-responsibility public service role that required professionalism, attention to detail, and confident communication with travelers.',
+    },
+    {
+      company: "St. Andrew's United Church",
+      role: 'Summer Events Coordinator',
+      duration: 'May 2023 - August 2023',
+      description:
+        'Planned and ran community programming, coordinated schedules and logistics, and helped create welcoming events for children and families.',
     },
   ],
   education: [
     {
-      institution: 'University Name',
-      degree: 'Bachelor of Science in Computer Science',
-      duration: '2014 - 2018',
+      institution: 'University of British Columbia',
+      degree: 'Bachelor of Arts in Environment & Sustainability',
+      duration: 'April 2023 - Expected Graduation: May 2026',
+    },
+    {
+      institution: 'Seoul National University, South Korea',
+      degree: 'Exchange Semester',
+      duration: 'September 2025 - December 2025',
+    },
+    {
+      institution: 'Simon Fraser University',
+      degree: 'Bachelor of Sciences in Geographical Information Systems',
+      duration: '2020 - 2023',
     },
   ],
   volunteering: [
     {
-      organization: 'Code for Good',
-      role: 'Volunteer Developer',
+      organization: 'A Loving Spoonful',
+      role: 'Student Volunteer',
       duration: '2021 - Present',
       description:
-        'Building web applications for non-profit organizations to help them better serve their communities.',
+        'Supported community care efforts through consistent volunteer service and a people-first approach.',
+    },
+    {
+      organization: 'Tech Mentorship Program',
+      role: 'Mentor',
+      duration: '2020 - Present',
+      description:
+        'Shared encouragement and practical guidance with students exploring new skills and career paths.',
     },
   ],
   projects: [
     {
-      title: 'Personal Portfolio Website',
+      title: 'Personal Website',
       description:
-        'A modern, responsive portfolio website built with React, TypeScript, and Express. Features a beautiful pastel pink design and smooth animations.',
+        'A monorepo personal site built with React, TypeScript, Express, and Tailwind CSS. It pulls profile content from an API and falls back gracefully when the backend is unavailable.',
       technologies: ['React', 'TypeScript', 'Express', 'Tailwind CSS', 'Vite'],
-      link: 'https://github.com/yourusername/portfolio',
     },
     {
-      title: 'Task Management App',
+      title: 'Student Project Placeholder',
       description:
-        'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Redux'],
-      link: 'https://github.com/yourusername/task-app',
+        'A placeholder card for a class, research, or creative project. Replace this text with a short summary of the work, your role, and the outcome.',
+      technologies: ['Research', 'Writing', 'Presentation'],
+    },
+    {
+      title: 'Content Portfolio Placeholder',
+      description:
+        'Use this space for a campaign, video series, or creative project you want to feature with a concise description and a few tools or platforms used.',
+      technologies: ['Video', 'Editing', 'Social Media'],
+    },
+    {
+      title: 'Community Project Placeholder',
+      description:
+        'A placeholder for volunteer, event, or community-facing work. Update it with the project goal, audience, and what you contributed.',
+      technologies: ['Coordination', 'Planning', 'Outreach'],
     },
   ],
   socials: [
     {
       platform: 'LinkedIn',
-      url: 'https://linkedin.com/in/yourprofile',
+      url: 'https://linkedin.com/in/maggiedi',
       icon: 'linkedin',
     },
     {
       platform: 'YouTube',
-      url: 'https://youtube.com/@yourchannel',
+      url: 'https://youtube.com/@maggiesdiaries',
       icon: 'youtube',
     },
     {
       platform: 'Instagram',
-      url: 'https://instagram.com/yourhandle',
+      url: 'https://www.instagram.com/maggiie.diaries/',
       icon: 'instagram',
     },
     {
       platform: 'TikTok',
-      url: 'https://tiktok.com/@yourhandle',
+      url: 'https://www.tiktok.com/@maggiesdiaries',
       icon: 'video',
-    },
-    {
-      platform: 'GitHub',
-      url: 'https://github.com/yourusername',
-      icon: 'github',
     },
   ],
 };

@@ -22,8 +22,8 @@ Response `200`:
 
 ```json
 {
-  "name": "Your Name",
-  "tagline": "Software Engineer | Designer | Creator",
+  "name": "Maggie Di",
+  "tagline": "Student | Content Creator",
   "bio": "...",
   "workExperience": [],
   "education": [],

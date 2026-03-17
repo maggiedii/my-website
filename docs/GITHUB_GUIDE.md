@@ -67,6 +67,7 @@ git commit -m "ci: add GitHub Actions quality workflow"
 Run from repo root:
 
 ```bash
+fnm use 22
 pnpm install --frozen-lockfile
 pnpm lint
 pnpm typecheck

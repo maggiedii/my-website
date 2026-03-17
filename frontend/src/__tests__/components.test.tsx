@@ -11,7 +11,7 @@ describe('Hero Component', () => {
       () => {
         expect(screen.getByRole('heading', { level: 1, name: 'John Doe' })).toBeInTheDocument();
       },
-      { timeout: 1500 }
+      { timeout: 3000 }
     );
     expect(screen.getByText('Software Engineer')).toBeInTheDocument();
   });

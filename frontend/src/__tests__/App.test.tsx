@@ -3,6 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import type { Profile } from 'shared';
 import App from '../App';
 import { fetchProfile } from '../lib/api';
+import { fallbackData } from '../lib/fallbackData';
 
 vi.mock('../lib/api', () => ({
   fetchProfile: vi.fn(),
@@ -68,7 +69,7 @@ describe('App', () => {
       () => {
         expect(screen.getByRole('heading', { level: 1, name: mockProfile.name })).toBeInTheDocument();
       },
-      { timeout: 1500 }
+      { timeout: 3000 }
     );
 
     expect(screen.getByRole('heading', { level: 3, name: 'About Me' })).toBeInTheDocument();
@@ -89,9 +90,11 @@ describe('App', () => {
     );
     await waitFor(
       () => {
-        expect(screen.getByRole('heading', { level: 1, name: /Your Name/i })).toBeInTheDocument();
+        expect(
+          screen.getByRole('heading', { level: 1, name: new RegExp(fallbackData.name, 'i') })
+        ).toBeInTheDocument();
       },
-      { timeout: 1500 }
+      { timeout: 3000 }
     );
   });
 

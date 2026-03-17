@@ -54,6 +54,71 @@
     scroll-behavior: smooth;
   }
 
+  #root,
+  #root * {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  #root h1,
+  #root h1 *,
+  #root h2,
+  #root h2 *,
+  #root h3,
+  #root h3 *,
+  #root h4,
+  #root h4 *,
+  #root h5,
+  #root h5 *,
+  #root h6,
+  #root h6 *,
+  #root p,
+  #root p *,
+  #root li,
+  #root li *,
+  #root blockquote,
+  #root blockquote *,
+  #root figcaption,
+  #root figcaption *,
+  #root small,
+  #root small *,
+  #root time,
+  #root time *,
+  #root strong,
+  #root strong *,
+  #root em,
+  #root em *,
+  #root code,
+  #root code *,
+  #root pre,
+  #root pre * {
+    user-select: text;
+    -webkit-user-select: text;
+  }
+
+  #root input,
+  #root textarea,
+  #root [contenteditable='true'] {
+    user-select: text;
+    -webkit-user-select: text;
+  }
+
+  #root button,
+  #root button *,
+  #root nav,
+  #root nav *,
+  #root header,
+  #root header *,
+  #root footer,
+  #root footer *,
+  #root svg,
+  #root svg *,
+  #root img,
+  #root img * {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
   * {
     @apply border-border;
   }
