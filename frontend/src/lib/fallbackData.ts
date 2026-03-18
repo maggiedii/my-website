@@ -2,7 +2,7 @@ import type { Profile } from 'shared';
 
 export const fallbackData: Profile = {
   name: 'Maggie Di',
-  tagline: 'Student | Content Creator',
+  tagline: 'Environment & Sustainability Student 1 | Content Creator',
   bio: "Hello, welcome to my little corner of the internet! I'm Maggie, a student at the University of British Columbia studying Environment & Sustainability.\n\nOutside the classroom, I create content and have worked in public-facing roles where clear communication, organization, and empathy matter. I'm especially interested in sustainability, community impact, and thoughtful storytelling.\n\nThis site is a simple place to share what I'm learning, what I've worked on, and a few projects that are easy to update over time.",
   workExperience: [
     {
