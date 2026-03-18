@@ -1,8 +1,42 @@
 import type { Profile } from 'shared';
 
-const API_URL =
-  import.meta.env.VITE_API_URL ||
-  (import.meta.env.DEV ? 'http://localhost:3000' : '');
+const LOCAL_BACKEND_URL = 'http://localhost:3000';
+
+function isLocalHostname(hostname: string): boolean {
+  return hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
+}
+
+type ResolveApiUrlOptions = {
+  configuredUrl?: string;
+  isDev?: boolean;
+  hostname?: string;
+};
+
+function getHostname(): string {
+  if (typeof window === 'undefined') {
+    return '';
+  }
+
+  return window.location.hostname;
+}
+
+export function resolveApiUrl({
+  configuredUrl = import.meta.env.VITE_API_URL,
+  isDev = import.meta.env.DEV,
+  hostname = getHostname(),
+}: ResolveApiUrlOptions = {}): string {
+  if (configuredUrl) {
+    return configuredUrl;
+  }
+
+  if (isDev || isLocalHostname(hostname)) {
+    return LOCAL_BACKEND_URL;
+  }
+
+  return '';
+}
+
+const API_URL = resolveApiUrl();
 
 export async function fetchProfile(): Promise<Profile> {
   const response = await fetch(`${API_URL}/api/profile`);

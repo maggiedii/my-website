@@ -332,3 +332,4 @@ This file drives:
 35. Added root TypeScript checking for `api/**/*.ts` and pinned the root package manager metadata so Vercel uses the same pnpm toolchain declared by the repo.
 36. Allowed `esbuild` in root pnpm build dependencies so Vercel installs do not skip the Vite/esbuild binary setup during CI builds.
 37. Switched the root Vercel API files to explicit `runtime = 'nodejs'` web-handler exports with plain JSON `Response` bodies to avoid raw-function compatibility issues on Vercel.
+38. Updated the frontend API base URL resolver so local static previews on `localhost` use `http://localhost:3000`, while deployed production still defaults to same-origin `/api`; added unit coverage for the resolver.
