@@ -2,6 +2,7 @@
   "name": "my-website",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@10.30.1",
   "description": "Personal website monorepo with React frontend and Express backend",
   "author": "",
   "license": "MIT",
@@ -15,7 +16,7 @@
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
     "format": "pnpm -r format",
-    "typecheck": "pnpm -r typecheck",
+    "typecheck": "pnpm -r typecheck && tsc --noEmit -p tsconfig.json",
     "test": "pnpm -r test",
     "clean": "pnpm -r clean && rm -rf node_modules"
   },
@@ -23,6 +24,11 @@
     "@types/node": "^22.19.11",
     "concurrently": "^9.1.0",
     "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   },
   "engines": {
     "node": ">=22.0.0 <23",

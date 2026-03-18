@@ -113,6 +113,7 @@ public
 
 # Cursor
 .cursor/
+.vercel/
 
 # Local development
 *.local

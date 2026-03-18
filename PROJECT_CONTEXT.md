@@ -1,7 +1,7 @@
 # PROJECT CONTEXT
 
 **Last Updated:** 2026-03-17  
-**Status:** Workspace stabilized on Node 22; Render Blueprint added; root dev, quality gates, and runtime smoke all passing locally
+**Status:** Workspace stabilized on Node 22; Vercel single-project deployment support added alongside the local Express dev flow; root dev and quality gates passing locally
 
 ---
 
@@ -31,6 +31,13 @@ Production personal website monorepo with:
   - `pnpm typecheck`
   - `pnpm test`
   - `pnpm build`
+- Local verification succeeded on **2026-03-17** with Node `v22.22.0` for the Vercel deployment path:
+  - `pnpm lint`
+  - `pnpm typecheck`
+  - `pnpm test`
+  - `pnpm build`
+  - direct smoke of `api/health.ts` -> `200 {"ok":true}`
+  - direct smoke of `api/profile.ts` -> `200` with valid profile payload keys
 - Root `pnpm dev` was repaired by removing the corrupted local install (`node_modules`, `.pnpm-store`) and reinstalling from `pnpm-lock.yaml`.
 
 ---
@@ -82,7 +89,12 @@ pnpm build
 ├── pnpm-workspace.yaml
 ├── pnpm-lock.yaml
 ├── .nvmrc
+├── api/
+│   ├── health.ts
+│   └── profile.ts
 ├── render.yaml
+├── tsconfig.json
+├── vercel.json
 ├── docs/
 │   ├── API.md
 │   └── GITHUB_GUIDE.md
@@ -160,6 +172,13 @@ FRONTEND_URL=http://localhost:5173
 VITE_API_URL=http://localhost:3000
 ```
 
+### Vercel Production
+
+```bash
+# Leave unset to use same-origin /api
+VITE_API_URL=
+```
+
 ### Render Production (`render.yaml`)
 
 ```bash
@@ -223,6 +242,7 @@ This file drives:
 ## Known Issues / Notes
 
 - `pnpm` may print an **Ignored build scripts** warning for `esbuild`; this is expected with pnpm’s build-approval model and does not block local lint/typecheck/test/build.
+- `pnpm dlx vercel build` cannot complete from this environment until the repo is linked to a Vercel project via `vercel pull --yes` or authenticated with `VERCEL_TOKEN`; this is a Vercel CLI/project-settings requirement, not a code issue.
 - No database is used in v1; all profile content is file-based JSON.
 - Text selection rules were validated by code inspection plus runtime smoke; a real browser pass in Safari/Chrome is still the best final check after future style changes.
 
@@ -295,7 +315,7 @@ This file drives:
 
 - [ ] Replace the remaining placeholder project cards in `backend/src/data/profile.json` and `frontend/src/lib/fallbackData.ts` with finalized project content.
 - [ ] Confirm the assumed TikTok handle if it differs from `@maggiesdiaries`.
-- [ ] Push the local Phase 5 completion work once you are happy with the content.
+- [ ] Push the Vercel deployment changes and complete the first Vercel dashboard deploy.
 
 ### Recent Decisions (2026-03-17)
 
@@ -307,3 +327,7 @@ This file drives:
 30. Added a root `render.yaml` Blueprint so the pnpm-workspace monorepo can deploy on Render from the repo root without breaking the local `shared` workspace dependency.
 31. Corrected the backend profile payload key back to `partnerships` and extended the backend API test so deploys cannot silently ship a mismatched profile contract.
 32. Updated the Render Blueprint frontend service from `type: static` to `type: web` with `runtime: static` because Render's current Blueprint spec requires static sites to be declared that way.
+33. Added root Vercel Functions for `/api/health` and `/api/profile`, plus `vercel.json`, so the site can deploy as a single Vercel project without a separately hosted backend.
+34. Changed the frontend API client to default to same-origin `/api` in production while keeping `http://localhost:3000` as the local development default.
+35. Added root TypeScript checking for `api/**/*.ts` and pinned the root package manager metadata so Vercel uses the same pnpm toolchain declared by the repo.
+36. Allowed `esbuild` in root pnpm build dependencies so Vercel installs do not skip the Vite/esbuild binary setup during CI builds.

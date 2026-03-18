@@ -2,8 +2,6 @@
 
 Production-ready personal website monorepo with a React/Vite frontend, Express backend, shared TypeScript types, and a pastel pink design system.
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/maggiedii/my-website)
-
 ## Stack
 
 - React 19 + Vite + TypeScript
@@ -118,28 +116,38 @@ Runs on pushes/PRs to `main`:
 
 ## Deploy
 
-This repo is configured for Render with a root-level Blueprint in `render.yaml`.
+The primary deployment target is now a single Vercel project:
 
-The monorepo must deploy from the repo root because both `frontend` and `backend` depend on the local `shared` workspace package.
+- static frontend output from `frontend/dist`
+- root Vercel Functions for `GET /api/health` and `GET /api/profile`
 
-### One-click deploy
+The monorepo must deploy from the repo root because the frontend and Vercel Functions both depend on the local `shared` package and shared content files.
+
+### Vercel setup
 
 1. Push the latest changes to GitHub.
-2. Click the Render button above.
-3. Approve creation of:
-   - `my-website-api`
-   - `my-website`
-4. Wait for both services to finish building.
+2. In Vercel, import `maggiedii/my-website`.
+3. Use these settings:
+   - Framework Preset: `Other`
+   - Root Directory: leave blank
+   - Install Command: `corepack enable && pnpm install --frozen-lockfile`
+   - Build Command: `pnpm --filter frontend build`
+   - Output Directory: `frontend/dist`
+4. Do not set `VITE_API_URL` for production unless you intentionally want to use an external API host. When unset, production uses same-origin `/api`.
+5. Deploy.
 
-### Render URLs
+### API behavior by environment
 
-- Frontend: `https://my-website.onrender.com`
-- Backend: `https://my-website-api.onrender.com`
-- Health check: `https://my-website-api.onrender.com/api/health`
+- Local development default: `http://localhost:3000`
+- Vercel production default: same-origin `/api`
+- Optional override: `VITE_API_URL=https://your-api.example.com`
 
-### If you later change service names or add a custom domain
+### Vercel deployment files
 
-Update these Render environment variables and redeploy:
+- `vercel.json`
+- `api/health.ts`
+- `api/profile.ts`
 
-- Backend: `FRONTEND_URL`
-- Frontend: `VITE_API_URL`
+### Render
+
+The previous Render Blueprint is still available in `render.yaml` if you want split frontend/backend hosting later, but it is no longer the primary deployment path.
