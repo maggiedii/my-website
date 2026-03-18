@@ -145,8 +145,13 @@ The monorepo must deploy from the repo root because the frontend and Vercel Func
 ### Vercel deployment files
 
 - `vercel.json`
+- `api/package.json`
 - `api/health.ts`
 - `api/profile.ts`
+
+### Vercel runtime note
+
+`api/package.json` sets `"type": "module"` for the root Vercel Functions so `/api/health` and `/api/profile` run as ESM in production. Without that file, Vercel may execute the generated function files as CommonJS and crash on top-level `import` statements.
 
 ### Render
 

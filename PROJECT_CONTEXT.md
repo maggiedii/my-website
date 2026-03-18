@@ -91,6 +91,7 @@ pnpm build
 ├── .nvmrc
 ├── api/
 │   ├── health.ts
+│   ├── package.json
 │   └── profile.ts
 ├── render.yaml
 ├── tsconfig.json
@@ -333,3 +334,4 @@ This file drives:
 36. Allowed `esbuild` in root pnpm build dependencies so Vercel installs do not skip the Vite/esbuild binary setup during CI builds.
 37. Switched the root Vercel API files to explicit `runtime = 'nodejs'` web-handler exports with plain JSON `Response` bodies to avoid raw-function compatibility issues on Vercel.
 38. Updated the frontend API base URL resolver so local static previews on `localhost` use `http://localhost:3000`, while deployed production still defaults to same-origin `/api`; added unit coverage for the resolver.
+39. Added `api/package.json` with `"type": "module"` so Vercel executes the deployed `/api/*.js` files as ESM instead of crashing on `import` syntax under CommonJS.
