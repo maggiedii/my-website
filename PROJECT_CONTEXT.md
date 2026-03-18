@@ -306,3 +306,4 @@ This file drives:
 29. Reordered work experience entries so the most recent roles appear first in both the backend profile data and the frontend fallback data.
 30. Added a root `render.yaml` Blueprint so the pnpm-workspace monorepo can deploy on Render from the repo root without breaking the local `shared` workspace dependency.
 31. Corrected the backend profile payload key back to `partnerships` and extended the backend API test so deploys cannot silently ship a mismatched profile contract.
+32. Updated the Render Blueprint frontend service from `type: static` to `type: web` with `runtime: static` because Render's current Blueprint spec requires static sites to be declared that way.

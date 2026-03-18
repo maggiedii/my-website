@@ -20,8 +20,9 @@ services:
         - pnpm-workspace.yaml
         - render.yaml
 
-  - type: static
+  - type: web
     name: my-website
+    runtime: static
     buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter frontend build
     staticPublishPath: frontend/dist
     envVars:
