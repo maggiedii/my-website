@@ -1,7 +1,7 @@
 # PROJECT CONTEXT
 
-**Last Updated:** 2026-03-13  
-**Status:** Workspace stabilized on Node 22; root dev, quality gates, and runtime smoke all passing locally
+**Last Updated:** 2026-03-17  
+**Status:** Workspace stabilized on Node 22; Render Blueprint added; root dev, quality gates, and runtime smoke all passing locally
 
 ---
 
@@ -82,6 +82,7 @@ pnpm build
 ├── pnpm-workspace.yaml
 ├── pnpm-lock.yaml
 ├── .nvmrc
+├── render.yaml
 ├── docs/
 │   ├── API.md
 │   └── GITHUB_GUIDE.md
@@ -159,6 +160,13 @@ FRONTEND_URL=http://localhost:5173
 VITE_API_URL=http://localhost:3000
 ```
 
+### Render Production (`render.yaml`)
+
+```bash
+FRONTEND_URL=https://my-website.onrender.com
+VITE_API_URL=https://my-website-api.onrender.com
+```
+
 ---
 
 ## Data Editing
@@ -174,6 +182,7 @@ This file drives:
 - work experience
 - education
 - volunteering
+- partnerships
 - projects
 - socials
 
@@ -295,3 +304,5 @@ This file drives:
 27. Reworked Partnerships from a long vertical stack into a compact responsive brand grid so name-only partner entries take much less vertical space.
 28. Added local partnership logo assets sourced from official brand surfaces where available. SciSpace uses the official App Store icon because direct logo retrieval from `scispace.com` was blocked by CloudFront during implementation.
 29. Reordered work experience entries so the most recent roles appear first in both the backend profile data and the frontend fallback data.
+30. Added a root `render.yaml` Blueprint so the pnpm-workspace monorepo can deploy on Render from the repo root without breaking the local `shared` workspace dependency.
+31. Corrected the backend profile payload key back to `partnerships` and extended the backend API test so deploys cannot silently ship a mismatched profile contract.

@@ -23,6 +23,7 @@ describe('API Endpoints', () => {
       expect(response.body).toHaveProperty('workExperience');
       expect(response.body).toHaveProperty('education');
       expect(response.body).toHaveProperty('volunteering');
+      expect(response.body).toHaveProperty('partnerships');
       expect(response.body).toHaveProperty('projects');
       expect(response.body).toHaveProperty('socials');
     });
@@ -33,6 +34,7 @@ describe('API Endpoints', () => {
       expect(Array.isArray(response.body.workExperience)).toBe(true);
       expect(Array.isArray(response.body.education)).toBe(true);
       expect(Array.isArray(response.body.volunteering)).toBe(true);
+      expect(Array.isArray(response.body.partnerships)).toBe(true);
       expect(Array.isArray(response.body.projects)).toBe(true);
       expect(Array.isArray(response.body.socials)).toBe(true);
     });

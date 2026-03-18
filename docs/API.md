@@ -28,6 +28,7 @@ Response `200`:
   "workExperience": [],
   "education": [],
   "volunteering": [],
+  "partnerships": [],
   "projects": [],
   "socials": []
 }

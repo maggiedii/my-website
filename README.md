@@ -2,6 +2,8 @@
 
 Production-ready personal website monorepo with a React/Vite frontend, Express backend, shared TypeScript types, and a pastel pink design system.
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/maggiedii/my-website)
+
 ## Stack
 
 - React 19 + Vite + TypeScript
@@ -113,3 +115,31 @@ Runs on pushes/PRs to `main`:
 - `pnpm typecheck`
 - `pnpm test`
 - `pnpm build`
+
+## Deploy
+
+This repo is configured for Render with a root-level Blueprint in `render.yaml`.
+
+The monorepo must deploy from the repo root because both `frontend` and `backend` depend on the local `shared` workspace package.
+
+### One-click deploy
+
+1. Push the latest changes to GitHub.
+2. Click the Render button above.
+3. Approve creation of:
+   - `my-website-api`
+   - `my-website`
+4. Wait for both services to finish building.
+
+### Render URLs
+
+- Frontend: `https://my-website.onrender.com`
+- Backend: `https://my-website-api.onrender.com`
+- Health check: `https://my-website-api.onrender.com/api/health`
+
+### If you later change service names or add a custom domain
+
+Update these Render environment variables and redeploy:
+
+- Backend: `FRONTEND_URL`
+- Frontend: `VITE_API_URL`

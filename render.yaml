@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: my-website-api
+    runtime: node
+    plan: free
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter backend build
+    startCommand: pnpm --filter backend start
+    healthCheckPath: /api/health
+    envVars:
+      - key: FRONTEND_URL
+        value: https://my-website.onrender.com
+      - key: NODE_ENV
+        value: production
+    buildFilter:
+      paths:
+        - backend/**
+        - shared/**
+        - package.json
+        - pnpm-lock.yaml
+        - pnpm-workspace.yaml
+        - render.yaml
+
+  - type: static
+    name: my-website
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter frontend build
+    staticPublishPath: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://my-website-api.onrender.com
+    buildFilter:
+      paths:
+        - frontend/**
+        - shared/**
+        - package.json
+        - pnpm-lock.yaml
+        - pnpm-workspace.yaml
+        - render.yaml
