@@ -10,5 +10,5 @@
     "noEmit": true,
     "types": ["node"]
   },
-  "include": ["api/**/*.ts", "shared/src/**/*.ts"]
+  "include": ["shared/src/**/*.ts"]
 }
